@@ -2,6 +2,8 @@
 
 A sample project to illustrate how to build your own harvester for Ilc.
 
-### In Step 2
+### In Step 3
 
-The project from Step 1 is extended to implements the interfaces to work as an InformationCollecter for a selected InformationPoint.
+A new harvester project is created Ilc.SampleHarvester.ExpandContact.sln.
+This harvester takes Informations of type Person from the previous harvester of Step 2 and 
+extends the Persons data with an url of an image.
