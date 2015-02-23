@@ -56,17 +56,17 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
 
         public List<ObjectType> GetCollectTypes(string tenant)
         {
-            throw new NotImplementedException();
+            return new List<ObjectType>();
         }
 
         public void CollectInformations(InformationProcess context, InfoPoint infoPoint, IInformationDataInterface dataInterface)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void ExpandInformations(InformationProcess context, List<string> informationIds, IInformationDataInterface dataInterface)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
