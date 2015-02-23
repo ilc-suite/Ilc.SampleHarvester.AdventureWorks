@@ -84,7 +84,7 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
 
         public void ExpandInformations(InformationProcess context, List<string> informationIds, IInformationDataInterface dataInterface)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
