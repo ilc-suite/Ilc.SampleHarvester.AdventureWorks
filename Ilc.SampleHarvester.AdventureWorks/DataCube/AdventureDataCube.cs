@@ -3,13 +3,14 @@ using System.ComponentModel.Composition;
 using System.Collections.Generic;
 using Ilc.BusinessObjects;
 using Ilc.DataCube.Contract;
+using Ilc.BusinessObjects.Common;
 
 namespace Ilc.SampleHarvester.AdventureWorks.DataCube
 {
     [Export(typeof(IDataCube))]
     public class AdventureDataCube : IDataCube         
     {
-
+        
         private string connectionString;
 
         public AdventureDataCube() : this("DefaultConnection")
@@ -54,14 +55,31 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
             }
         }
 
+        // This function is called when the IlcCore Server requests the information types that can be loaded from this harvester
         public List<ObjectType> GetCollectTypes(string tenant)
         {
-            throw new NotImplementedException();
+            return new List<ObjectType> 
+            {
+                new ObjectType(typeof(Company), "Company"),                
+                new ObjectType(typeof(ContactPerson), "ContactPerson"),
+            };
         }
 
+
+        // This function is called when the IlcCore Server request informations for an InfoPoint
         public void CollectInformations(InformationProcess context, InfoPoint infoPoint, IInformationDataInterface dataInterface)
         {
-            throw new NotImplementedException();
+            var company = infoPoint.Value as Company;
+
+            if (company == null)
+                return;
+            
+            dataInterface.Insert(company);
+
+            // load contact informations
+            var contactsLoader = new ContactsLoader(connectionString);
+            var contacts = contactsLoader.LoadContactsByCompany(company);
+            dataInterface.Insert(contacts);
         }
 
         public void ExpandInformations(InformationProcess context, List<string> informationIds, IInformationDataInterface dataInterface)

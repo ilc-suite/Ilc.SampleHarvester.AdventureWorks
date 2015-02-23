@@ -2,6 +2,6 @@
 
 A sample project to illustrate how to build your own harvester for Ilc.
 
-### In Step 1
+### In Step 2
 
-The project implements the necessary interfaces to work as an InformationPoint Harvester for an Ilc System.
+The project from Step 1 is extended to implements the interfaces to work as an InformationCollecter for a selected InformationPoint.
