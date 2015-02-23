@@ -133,32 +133,6 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
             };
         }
 
-        /// <summary>
-        /// Loads aditional information for a company
-        /// </summary>
-        /// <param name="company">The Copmany BusinessInformation Object to add informations to.</param>
-        public void ExtendCompany(Company company)
-        {
-            var sql = "select * from [Sales].[vStoreWithDemographics] where [BusinessEntityId] = @id ";
-            var cmd = new SqlCommand(sql, connection);
-            cmd.Parameters.AddWithValue("@id", company.Number);
-            using (SqlDataReader datareader = cmd.ExecuteReader())
-            {
-                if (datareader.Read())
-                {
-                    ExtendCompany(datareader, company);
-                }
-            }
-        }
-
-        private void ExtendCompany(SqlDataReader reader, Company company)
-        {
-            company.FoundedYear = reader.GetInt32("YearOpened");
-            company.EmployeeCount = reader.GetInt32OrDefault("NumberEmployees").ToString();
-            company.Industries.Add(reader.GetStringOrDefault("Specialty"));
-            company.Industries.Add(reader.GetStringOrDefault("Brands"));
-            company.StockExchange = reader.GetStringOrDefault("BankName");
-            company.Type = reader.GetStringOrDefault("BusinessType");
-        }
+        
     }
 }

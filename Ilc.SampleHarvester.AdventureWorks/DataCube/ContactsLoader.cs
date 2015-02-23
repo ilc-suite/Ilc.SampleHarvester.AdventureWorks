@@ -48,6 +48,7 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
         {
             return new ContactPerson
             {
+                Number = reader.GetString("EmailAddress"),
                 Firstname = reader.GetStringOrDefault("FirstName"),
                 Lastname = reader.GetStringOrDefault("LastName"),
                 
