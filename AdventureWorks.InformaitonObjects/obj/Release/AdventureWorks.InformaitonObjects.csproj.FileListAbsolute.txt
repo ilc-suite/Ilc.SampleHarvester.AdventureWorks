@@ -1,0 +1,17 @@
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\AdventureWorks.InformaitonObjects.dll.config
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\AdventureWorks.InformaitonObjects.dll
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\AdventureWorks.InformaitonObjects.pdb
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\Ilc.BusinessObjects.Common.dll
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\Ilc.BusinessObjects.dll
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\Ilc.dll
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\log4net.dll
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\MongoDB.Bson.dll
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\MongoDB.Driver.dll
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\Newtonsoft.Json.dll
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\log4net.xml
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\MongoDB.Bson.xml
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\MongoDB.Driver.xml
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\bin\Release\Newtonsoft.Json.xml
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\obj\Release\AdventureWorks.InformaitonObjects.csprojResolveAssemblyReference.cache
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\obj\Release\AdventureWorks.InformaitonObjects.dll
+D:\_checkout\ILC_Projects\harvester\Ilc.SampleHarvester.AdventureWorks\Step4\AdventureWorks.InformaitonObjects\obj\Release\AdventureWorks.InformaitonObjects.pdb
