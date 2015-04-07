@@ -35,8 +35,3 @@ the harvester reads the image bytes from the database and returns them.
 The Ilc.SampleHarvester.ExpandContact harvester is extended to use credential authentication. 
 This sample illustrates how to implement authentication for 3rd party applications. 
 The harvester is modified to now only serve pictures to authenticated users.
-
-### [In Step 6] (https://github.com/ilc-suite/Ilc.SampleHarvester.AdventureWorks/tree/6-Documents)
-
-The Ilc.SampleHarvester.Document harvester is a quick sample of viewing documents.
-It returns urls to documents that an Ilc App consumes and uses the embedded viewer to show documents. 
