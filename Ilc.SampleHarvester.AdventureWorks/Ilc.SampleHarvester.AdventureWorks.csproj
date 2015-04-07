@@ -40,87 +40,87 @@
   <ItemGroup>
     <Reference Include="Ilc, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationObjects.2.5.1\lib\net45\Ilc.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationObjects.3.0.3\lib\net45\Ilc.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.Authentification.Contract, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.Authentification.Contract.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.Authentification.Contract.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.BusinessObjects, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationObjects.2.5.1\lib\net45\Ilc.BusinessObjects.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationObjects.3.0.3\lib\net45\Ilc.BusinessObjects.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.BusinessObjects.Common, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationObjects.2.5.1\lib\net45\Ilc.BusinessObjects.Common.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationObjects.3.0.3\lib\net45\Ilc.BusinessObjects.Common.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.Data, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.Data.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.Data.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.DataCube, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.DataCube.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.DataCube.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.DataCube.Contract, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.DataCube.Contract.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.DataCube.Contract.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.DataCube.Generic, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.DataCube.Generic.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.DataCube.Generic.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.DataCube.Social, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.DataCube.Social.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.DataCube.Social.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.InformationBroker.Client, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.InformationBroker.Client.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.InformationBroker.Client.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.InformationBroker.Contract, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.InformationBroker.Contract.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.InformationBroker.Contract.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.InformationHarvester, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.InformationHarvester.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.InformationHarvester.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.InformationHarvester.Contract, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.InformationHarvester.Contract.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.InformationHarvester.Contract.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.InformationPublisher.PublishClient, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.InformationPublisher.PublishClient.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.InformationPublisher.PublishClient.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.InformationPublisher.PublishContract, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.InformationPublisher.PublishContract.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.InformationPublisher.PublishContract.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.InformationRepository, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.InformationRepository.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.InformationRepository.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.InformationRepository.Contract, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.InformationRepository.Contract.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.InformationRepository.Contract.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.Linguistic, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.Linguistic.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.Linguistic.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.NotificationManager, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.NotificationManager.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.NotificationManager.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.OAuth, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.OAuth.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.OAuth.dll</HintPath>
     </Reference>
     <Reference Include="Ilc.OAuth2, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.2.4.3\lib\net45\Ilc.OAuth2.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationHarvester.Assemblies.3.0.3\lib\net45\Ilc.OAuth2.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
