@@ -33,16 +33,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ilc, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationObjects.3.0.3\lib\net45\Ilc.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationObjects.3.3.0\lib\net45\Ilc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Ilc.BusinessObjects, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationObjects.3.0.3\lib\net45\Ilc.BusinessObjects.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationObjects.3.3.0\lib\net45\Ilc.BusinessObjects.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Ilc.BusinessObjects.Common, Version=2.4.0.0, Culture=neutral, PublicKeyToken=feeafc8cfa1f94b1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ilc.InformationObjects.3.0.3\lib\net45\Ilc.BusinessObjects.Common.dll</HintPath>
+      <HintPath>..\packages\Ilc.InformationObjects.3.3.0\lib\net45\Ilc.BusinessObjects.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
