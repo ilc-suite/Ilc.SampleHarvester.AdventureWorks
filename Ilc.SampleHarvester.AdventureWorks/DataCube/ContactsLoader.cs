@@ -8,19 +8,13 @@ using System.Web;
 
 namespace Ilc.SampleHarvester.AdventureWorks.DataCube
 {
-    public class ContactsLoader
+    public class ContactsLoader : LoaderBase
     {
-        private SqlConnection connection;
-
         /// <summary>
         /// Creates a ContactsLoader class.
         /// </summary>
         /// <param name="connectionString">A connection string to a AdventureWorkds database.</param>
-        public ContactsLoader(string connectionString)
-        {
-            connection = new SqlConnection(connectionString);
-            connection.Open();
-        }
+        public ContactsLoader(string connectionString) : base(connectionString) { }
 
         /// <summary>
         /// Loads one or more companies by its name.
@@ -30,15 +24,18 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
         public List<ContactPerson> LoadContactsByCompany(Company company)
         {
             var result = new List<ContactPerson>();
-            var sql = "select * from [Purchasing].[vVendorWithContacts] where [BusinessEntityID] = @id " +
-                "union select * from [Sales].[vStoreWithContacts] where [BusinessEntityID] = @id ";
-            var cmd = new SqlCommand(sql, connection);
-            cmd.Parameters.AddWithValue("@id", company.Number);
-            using (SqlDataReader datareader = cmd.ExecuteReader())
+            using (SqlConnection connection = CreateConnection())
             {
-                while (datareader.Read())
+                var sql = "select * from [Purchasing].[vVendorWithContacts] where [BusinessEntityID] = @id " +
+                    "union select * from [Sales].[vStoreWithContacts] where [BusinessEntityID] = @id ";
+                var cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@id", company.Number);
+                using (SqlDataReader datareader = cmd.ExecuteReader())
                 {
-                    result.Add(ReadContact(datareader));
+                    while (datareader.Read())
+                    {
+                        result.Add(ReadContact(datareader));
+                    }
                 }
             }
             return result;
