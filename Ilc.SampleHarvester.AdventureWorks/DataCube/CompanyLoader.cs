@@ -13,7 +13,7 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
     /// </summary>
     public class CompanyLoader
     {
-        private SqlConnection connection;
+        private string connectionString; 
 
         /// <summary>
         /// Creates a CompanyLoader class.
@@ -21,8 +21,17 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
         /// <param name="connectionString">A connection string to a AdventureWorkds database.</param>
         public CompanyLoader(string connectionString)
         {
-            connection = new SqlConnection(connectionString);
+            this.connectionString = connectionString; 
+        }
+
+        /// <summary>
+        /// Creates a SQL Connection to a AdventureWorks database.
+        /// </summary>
+        public SqlConnection CreateConnection()
+        {
+            var connection = new SqlConnection(connectionString);
             connection.Open();
+            return connection; 
         }
 
         /// <summary>
@@ -32,19 +41,23 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
         /// <returns>A list of compnaies</returns>
         public List<Company> LoadCompanyByName(string name)
         {
-            var result = new List<Company>();            
-            var sql = "select * from [Purchasing].[vVendorWithAddresses] where [Name] like @name " +
-                "union select * from [Sales].[vStoreWithAddresses] where [Name] like @name ";
-            var cmd = new SqlCommand(sql, connection);
-            cmd.Parameters.AddWithValue("@name", name + "%");
-            using (SqlDataReader datareader = cmd.ExecuteReader())
+            var result = new List<Company>();
+            using (SqlConnection connection = CreateConnection())
             {
-                while (datareader.Read())
+                var sql = "select * from [Purchasing].[vVendorWithAddresses] where [Name] like @name " +
+                    "union select * from [Sales].[vStoreWithAddresses] where [Name] like @name ";
+                var cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@name", name + "%");
+                using (SqlDataReader datareader = cmd.ExecuteReader())
                 {
-                    result.Add(ReadCompany(datareader));
+                    while (datareader.Read())
+                    {
+                        result.Add(ReadCompany(datareader));
+                    }
                 }
             }
             return result;
+
         }
 
         /// <summary>
@@ -55,20 +68,23 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
         public Company LoadCompany(long businessEntityId)
         {
             Company result = null;
-            var sql = "select * from [Purchasing].[vVendorWithAddresses] where [BusinessEntityId] = @id " +
-                "union select * from [Sales].[vStoreWithAddresses] where [BusinessEntityId] = @id ";
-            var cmd = new SqlCommand(sql, connection);
-            cmd.Parameters.AddWithValue("@id", businessEntityId);
-            using (SqlDataReader datareader = cmd.ExecuteReader())
+            using (SqlConnection connection = CreateConnection())
             {
-                if (!datareader.Read())
+                var sql = "select * from [Purchasing].[vVendorWithAddresses] where [BusinessEntityId] = @id " +
+                    "union select * from [Sales].[vStoreWithAddresses] where [BusinessEntityId] = @id ";
+                var cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@id", businessEntityId);
+                using (SqlDataReader datareader = cmd.ExecuteReader())
                 {
-                    throw new System.Data.RowNotInTableException(string.Format("no entries found for BusinessEntityId {0}", businessEntityId));
-                }
-                result = ReadCompany(datareader);
-                if (datareader.Read())
-                {
-                    throw new System.Data.DBConcurrencyException(string.Format("found more than one company for BusinessEntityId {0}", businessEntityId));
+                    if (!datareader.Read())
+                    {
+                        throw new System.Data.RowNotInTableException(string.Format("no entries found for BusinessEntityId {0}", businessEntityId));
+                    }
+                    result = ReadCompany(datareader);
+                    if (datareader.Read())
+                    {
+                        throw new System.Data.DBConcurrencyException(string.Format("found more than one company for BusinessEntityId {0}", businessEntityId));
+                    }
                 }
             }
             return result;
@@ -82,34 +98,37 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
         public List<Company> LoadCompanyByContactEmail(string email)
         {
             var result = new List<Company>();
-            var sqlvendor = "select adr.* from [Purchasing].[vVendorWithAddresses] adr" +
-                " inner join [Purchasing].[vVendorWithContacts] contacts on adr.[BusinessEntityId] = contacts.[BusinessEntityId] " +
-                " where [EmailAddress] = @email ";
-
-            var cmd = new SqlCommand(sqlvendor, connection);
-            cmd.Parameters.AddWithValue("@email", email);           
-            using (SqlDataReader datareader = cmd.ExecuteReader())
+            using (SqlConnection connection = CreateConnection())
             {
-                 while (datareader.Read())
-                 {
-                     result.Add(ReadCompany(datareader));
-                 }
-            }
+                var sqlvendor = "select adr.* from [Purchasing].[vVendorWithAddresses] adr" +
+                    " inner join [Purchasing].[vVendorWithContacts] contacts on adr.[BusinessEntityId] = contacts.[BusinessEntityId] " +
+                    " where [EmailAddress] = @email ";
 
-            var sqlstore = "select * from [Sales].[vStoreWithAddresses] adr " +
-                " inner join [Sales].[vStoreWithContacts] contacts on adr.[BusinessEntityId] = contacts.[BusinessEntityId] " +
-                " where [EmailAddress] = @email ";
-
-            var cmdstore = new SqlCommand(sqlstore, connection);
-            cmdstore.Parameters.AddWithValue("@email", email);
-            using (SqlDataReader datareader = cmdstore.ExecuteReader())
-            {
-                while (datareader.Read())
+                var cmd = new SqlCommand(sqlvendor, connection);
+                cmd.Parameters.AddWithValue("@email", email);
+                using (SqlDataReader datareader = cmd.ExecuteReader())
                 {
-                    result.Add(ReadCompany(datareader));
+                    while (datareader.Read())
+                    {
+                        result.Add(ReadCompany(datareader));
+                    }
                 }
-            }
 
+                var sqlstore = "select * from [Sales].[vStoreWithAddresses] adr " +
+                    " inner join [Sales].[vStoreWithContacts] contacts on adr.[BusinessEntityId] = contacts.[BusinessEntityId] " +
+                    " where [EmailAddress] = @email ";
+
+                var cmdstore = new SqlCommand(sqlstore, connection);
+                cmdstore.Parameters.AddWithValue("@email", email);
+                using (SqlDataReader datareader = cmdstore.ExecuteReader())
+                {
+                    while (datareader.Read())
+                    {
+                        result.Add(ReadCompany(datareader));
+                    }
+                }
+
+            }
             return result;
         }
 
