@@ -199,6 +199,7 @@
     <Compile Include="AdventureService.cs" />
     <Compile Include="DataCube\ContactsLoader.cs" />
     <Compile Include="DataCube\ContextParser.cs" />
+    <Compile Include="DataCube\LoaderBase.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <PropertyGroup>
