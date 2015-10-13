@@ -12,40 +12,37 @@ using Ilc.BusinessObjects;
 
 namespace Ilc.SampleHarvester.AdventureWorks.DataCube
 {
-    public class ProductsLoader
+    public class ProductsLoader : LoaderBase
     {
-         private SqlConnection connection;
-
         /// <summary>
          /// Creates a ProductsLoader class.
         /// </summary>
         /// <param name="connectionString">A connection string to a AdventureWorkds database.</param>
-        public ProductsLoader(string connectionString)
-        {
-            connection = new SqlConnection(connectionString);
-            connection.Open();
-        }
+        public ProductsLoader(string connectionString) : base(connectionString) { }
 
         public List<Product> LoadProductByCompany(Company company)
         {
-            var result = new List<Product>();            
-            var sql = "select p.*, sod.OrderQty " +
-                        "from [Production].[Product] p " +
-                        "inner join [Sales].[SalesOrderDetail] sod " +
-                        "ON p.ProductID = sod.ProductID " +
-                        "inner join [Sales].[SalesOrderHeader] soh " +
-                        "ON sod.SalesOrderID = soh.SalesOrderID " +
-                        "inner join [Sales].[Customer] c " +
-                        "ON c.CustomerID = soh.CustomerID " +
-                        "where c.StoreID = @storeid ";
-            var cmd = new SqlCommand(sql, connection);
-            cmd.Parameters.AddWithValue("@storeid", company.Number);
-            using (SqlDataReader datareader = cmd.ExecuteReader())
+            var result = new List<Product>();
+            using (SqlConnection connection = CreateConnection())
             {
-                while (datareader.Read())
+                var sql = "select p.*, sod.OrderQty " +
+                            "from [Production].[Product] p " +
+                            "inner join [Sales].[SalesOrderDetail] sod " +
+                            "ON p.ProductID = sod.ProductID " +
+                            "inner join [Sales].[SalesOrderHeader] soh " +
+                            "ON sod.SalesOrderID = soh.SalesOrderID " +
+                            "inner join [Sales].[Customer] c " +
+                            "ON c.CustomerID = soh.CustomerID " +
+                            "where c.StoreID = @storeid ";
+                var cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@storeid", company.Number);
+                using (SqlDataReader datareader = cmd.ExecuteReader())
                 {
-                    var product = ReadProduct(datareader);
-                    result.Add(product);                    
+                    while (datareader.Read())
+                    {
+                        var product = ReadProduct(datareader);
+                        result.Add(product);
+                    }
                 }
             }
             return result;
@@ -84,19 +81,22 @@ namespace Ilc.SampleHarvester.AdventureWorks.DataCube
         public List<ProductPhoto> GetProductPhoto(string productId)
         {
             var result = new List<ProductPhoto>();
-            var sql = "SELECT * " +
-                    "FROM [Production].[ProductPhoto] p " +
-                    "inner join [Production].[ProductProductPhoto] ppp " +
-                    "ON ppp.ProductPhotoID = p.ProductPhotoID " +
-                    "WHERE ppp.ProductID = @productid " +
-                    "and ppp.[Primary] = 1";
-            var cmd = new SqlCommand(sql, connection);
-            cmd.Parameters.AddWithValue("@productid", productId);
-            using (SqlDataReader datareader = cmd.ExecuteReader())
+            using (SqlConnection connection = CreateConnection())
             {
-                while (datareader.Read())
+                var sql = "SELECT * " +
+                        "FROM [Production].[ProductPhoto] p " +
+                        "inner join [Production].[ProductProductPhoto] ppp " +
+                        "ON ppp.ProductPhotoID = p.ProductPhotoID " +
+                        "WHERE ppp.ProductID = @productid " +
+                        "and ppp.[Primary] = 1";
+                var cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@productid", productId);
+                using (SqlDataReader datareader = cmd.ExecuteReader())
                 {
-                    result.Add(ReadPhoto(datareader));
+                    while (datareader.Read())
+                    {
+                        result.Add(ReadPhoto(datareader));
+                    }
                 }
             }
             return result;
