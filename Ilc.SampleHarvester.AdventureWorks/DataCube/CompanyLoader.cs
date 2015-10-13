@@ -8,31 +8,13 @@ using System.Web;
 
 namespace Ilc.SampleHarvester.AdventureWorks.DataCube
 {
-    /// <summary>
-    /// A class for loading company object from Database.
-    /// </summary>
-    public class CompanyLoader
+    public class CompanyLoader : LoaderBase
     {
-        private string connectionString; 
-
         /// <summary>
         /// Creates a CompanyLoader class.
         /// </summary>
         /// <param name="connectionString">A connection string to a AdventureWorkds database.</param>
-        public CompanyLoader(string connectionString)
-        {
-            this.connectionString = connectionString; 
-        }
-
-        /// <summary>
-        /// Creates a SQL Connection to a AdventureWorks database.
-        /// </summary>
-        public SqlConnection CreateConnection()
-        {
-            var connection = new SqlConnection(connectionString);
-            connection.Open();
-            return connection; 
-        }
+        public CompanyLoader(string connectionString) : base(connectionString){ }
 
         /// <summary>
         /// Loads one or more companies by its name.
